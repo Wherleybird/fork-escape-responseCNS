@@ -2,7 +2,7 @@ This is a forked repo of the 2019 eNeuron paper " A Computational Model of the E
 
 The purpose of this fork is to create a shared starting point for the Spring 2026 Pena Lab Project Team to work towards reproducing the paper using Brian2
 
-We installed neuron=7.6.7 because it came out around the time of the original paper
+We installed neuron=7.8.2 because it came out around the time of the original paper and it was the earliest version that worked on WSL at the time of testing
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Model files from the manuscript:
