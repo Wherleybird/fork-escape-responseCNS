@@ -1,44 +1,101 @@
-This is a forked repo of the 2019 eNeuron paper " A Computational Model of the Escape Response Latency in the Giant Fiber System of Drosophila melanogaster" by Augustin, H, Zylbertal, A and Partridge L
+# Fork Escape Response
 
-The purpose of this fork is to create a shared starting point for the Spring 2026 Pena Lab Project Team to work towards reproducing the paper using Brian2
+This repository is a fork of the 2019 eNeuron paper model:
 
-We installed neuron=7.5.0 because it came out around the time of the original paper and it was the earliest version that worked on WSL at the time of testing
+"A Computational Model of the Escape Response Latency in the Giant Fiber System of Drosophila melanogaster"
+by Augustin H, Zylbertal A, and Partridge L
+
+The purpose of this fork is to create a shared starting point for the Spring 2026 Pena Lab Project Team to work toward reproducing the paper using Brian2.
+
+We installed `neuron=7.5.0` because it was released around the time of the original paper and was the earliest version that worked on WSL during testing.
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Model files from the manuscript:
 
-Augustin, H, Zylbertal, A and Partridge L, "A computational model of the escape latency in the Giant Fiber System of D. melanogaster" (preprint)
-The file gfs_param_scan_conductances.py reproduces the protocol used
-in Fig. 3 of the article by calling the module gfpn.py.
+## Model files from the manuscript
 
-Questions on how to use this model should be directed to
+Augustin H, Zylbertal A, and Partridge L
+"A computational model of the escape latency in the Giant Fiber System of D. melanogaster" (preprint)
+
+The file `gfs_param_scan_conductances.py` reproduces the protocol used in Figure 3 of the article by calling the module `gfpn.py`.
+
+Questions about how to use the original model should be directed to:
 asaph.zylbertal at mail.huji.ac.il
 
-Synopsis:
+## Synopsis
 
-The Giant Fiber System (GFS) is a multi-component neuronal pathway mediating rapid escape
-response in adult fruit-fly Drosophila melanogaster, usually in the face of a threatening visual
-stimulus. Two branches of the circuit promote the response by stimulating an escape jump
-followed by flight initiation. Our recent work demonstrated an age-associated decline in the
-speed of signal propagation through the circuit, likely due to the diminishing number of gap
-junctions between its components in ageing flies. In this work, we generated a realistic
-conductance-based computational model of the GFS that recapitulates our experimental
-results and identifies some of the critical anatomical and physiological components governing
-the response latency of the circuit. Overall, anatomical properties of the GFS neurons have a
-stronger impact on the transmission speed compared to the effect of changes in neuronal
-membrane conductance densities. Our model and provides testable predictions for improving
-the circuit’s performance in ageing animals by means of experimental interventions.
+The Giant Fiber System (GFS) is a multi-component neuronal pathway that mediates rapid escape responses in adult fruit fly Drosophila melanogaster, usually in response to a threatening visual stimulus. Two branches of the circuit promote the response by stimulating an escape jump followed by flight initiation.
 
-This example protocol plots the GFS latency as a function of gap junction conductance and:
-1) Transient voltage gated sodium conductance
-2) Voltage gated potassium conductance
-3) Leak conductance
+Prior work showed an age-associated decline in the speed of signal propagation through the circuit, likely due to a diminishing number of gap junctions between circuit components in aging flies. This model reproduces those experimental results and identifies several critical anatomical and physiological components that influence response latency.
 
-Example use:
+Overall, the model suggests that anatomical properties of GFS neurons have a stronger effect on transmission speed than changes in neuronal membrane conductance densities. The model also provides testable predictions for improving circuit performance in aging animals through experimental intervention.
 
-Extract the archive, run nrnivmodl in the channels directory
-(linux/unix) or mknrndll (mswin or mac os x) (see
+## Example protocol
+
+This protocol plots GFS latency as a function of gap junction conductance and:
+
+1. Transient voltage-gated sodium conductance
+2. Voltage-gated potassium conductance
+3. Leak conductance
+
+## Example use
+
+Extract the archive, then compile the channels in the `channels` directory.
+
+- On Linux/Unix, run `nrnivmodl`
+- On Windows or macOS, run `mknrndll`
+
+For more help with compiling NEURON channel mechanisms:
 http://senselab.med.yale.edu/ModelDB/NEURON_DwnldGuide.html
-for more help) to compile the channels, and run the file
-gfs_param_scan_conductances.py. After a while, it will plot
-the latency maps.
+
+After compiling the channels, run:
+
+`gfs_param_scan_conductances.py`
+
+After some time, the script will generate the latency maps.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Contributors
+
+Each project member should create their own file in the `contributors` folder instead of editing one shared contributor file. This helps reduce merge conflicts.
+
+### Contributor steps
+
+1. Pull the latest version of the repo
+2. Create a new file in the `contributors` folder using the template
+3. Name the file with your own name
+4. Fill out your information
+5. Commit and push your changes
+
+### Contributor file format
+
+Name:
+Major:
+Role:
+Hobbies:
+
+### Suggested file name
+
+`contributors/your-name.md`
+
+Example:
+`contributors/sebastian-davalos.md`
+
+### Example workflow
+
+Pull the latest changes:
+
+`git pull origin master`
+
+Create your file in the `contributors` folder and fill it out using the template.
+
+Then run:
+
+`git add contributors/your-name.md`
+`git commit -m "Add contributor profile for Your Name"`
+`git push origin master`
+
+If your push is rejected, pull the latest changes and try again:
+
+`git pull origin master`
+`git push origin master`
